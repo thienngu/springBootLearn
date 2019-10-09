@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public class LoginApiSpringBootApplication {
 
 	public static void main(String[] args) {
-		javaMailSender.send(msg);
+		
 		SpringApplication.run(LoginApiSpringBootApplication.class, args);
 		
 	}
