@@ -101,7 +101,7 @@ public class AuthController {
                 .buildAndExpand(result.getUsername()).toUri();
         //sendmail
           SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo("to_1@gmail.com", "to_2@gmail.com", "to_3@yahoo.com");
+        msg.setTo(signUpRequest.getEmail());
 
         msg.setSubject("Start your account");
         msg.setText("Hello World \n Spring Boot Email");
