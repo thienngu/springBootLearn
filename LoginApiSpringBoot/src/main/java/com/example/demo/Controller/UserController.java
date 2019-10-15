@@ -55,4 +55,16 @@ import java.util.Collections;
 	        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getEmail());
 	        return userSummary;
 	    }
+		
+		  @GetMapping("/users/{username}")
+	    public UserProfile getUserProfile(@PathVariable(value = "username") String username) {
+	        User user = userRepository.findByUsername(username)
+	                .orElseThrow(new ResourceNotFoundException("User", "username", username));
+
+	       
+
+	        UserProfile userProfile = new UserProfile(user.getUsername(), user.getEmail());
+
+	        return userProfile;
+	    }
 }
